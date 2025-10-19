@@ -143,6 +143,8 @@ footer {
 .mobile-nav {
   background: var(--accent);
   color: #fff;
+  background: var(--navy);
+  padding: 0.6rem 0.75rem;
 }
 .mobile-nav .navbar-brand img {
   height: 36px;
@@ -161,7 +163,6 @@ footer {
 }
 #mobileNav .nav-link {
   color: #fff !important;
-  padding: 0.6rem 0.75rem;
   font-weight: 500;
 }
 #mobileNav .btn-cta {
@@ -273,6 +274,16 @@ footer {
   padding: 1rem;
 }
 
+.contact-email a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
 /* Footer */
 .site-footer {
   background: transparent;
@@ -331,4 +342,31 @@ label.form-label {
   border-radius: 8px;
   padding: 0.45rem 0.75rem;
   font-weight: 600;
+}
+
+/* Team page tweaks */
+.team-photo {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(11, 37, 64, 0.06);
+}
+
+/* Garantir que a imagem do membro ocupe o bloco com bom corte */
+.team-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bio e títulos */
+.team-bio h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-bio p {
+  color: #222;
+  max-width: 70ch;
 }

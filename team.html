@@ -1,31 +1,44 @@
-<!-- FILE: team.html -->
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Garantia Capital — Our Team</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Garantia Capital — Team</title>
+
+        <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet">
+
+        <!-- Custom CSS -->
         <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body class="no-left-margin">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
+    <body>
+
+        <!-- TOP NAV (mobile). Hidden on lg+ -->
+        <nav
+            class="navbar navbar-expand-lg navbar-light d-lg-none mobile-nav shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="index.html">GARANTIA CAPITAL</a>
+                <a class="navbar-brand" href="index.html"
+                    aria-label="Garantia Capital">
+                    <img src="img/garantia-logo.svg" alt="Garantia logo"
+                        style="height:36px;">
+                </a>
+
                 <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false"
+                    data-bs-toggle="collapse" data-bs-target="#mobileNav"
+                    aria-controls="mobileNav" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+
+                <div class="collapse navbar-collapse" id="mobileNav">
+                    <ul class="navbar-nav ms-auto w-100 py-2">
                         <li class="nav-item"><a class="nav-link"
                                 href="index.html#about">About</a></li>
                         <li class="nav-item"><a class="nav-link active"
-                                href="team.html">Our Team</a></li>
+                                href="team.html">Team</a></li>
                         <li class="nav-item"><a class="nav-link"
                                 href="index.html#contact">Contact</a></li>
                     </ul>
@@ -33,95 +46,132 @@
             </div>
         </nav>
 
-        <header class="team-hero d-flex align-items-end">
-            <div class="container text-white pb-4">
-                <h1 class="h3">Our Team</h1>
-                <p class="mb-0">Deep experience across advisory, restructuring,
-                    M&amp;A and capital markets.</p>
+        <!-- RIGHT SIDEBAR NAV (desktop) -->
+        <aside class="sidebar d-none d-lg-flex flex-column align-items-start">
+            <div class="sidebar-brand mb-4 w-100 d-flex justify-content-center">
+                <a href="index.html">
+                    <img src="img/garantia-logo.svg" alt="Garantia logo"
+                        style="height:42px;">
+                </a>
             </div>
-        </header>
 
-        <main class="py-5">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card p-3 h-100">
-                            <div class="d-flex gap-3">
-                                <img src="img/luiz.jpg"
-                                    alt="Luiz Cezar Fernandes" class="rounded"
-                                    style="width:120px; height:120px; object-fit:cover">
-                                <div>
-                                    <h5 class="mb-1">Luiz Cezar Fernandes</h5>
-                                    <small class="text-muted">Founder & Senior
-                                        Advisor</small>
-                                    <p class="mt-2">Luiz Cezar Fernandes is an
+            <nav class="nav flex-column w-100">
+                <a class="nav-link" href="index.html#about">About</a>
+                <a class="nav-link active" href="team.html">Team</a>
+                <a class="nav-link" href="index.html#contact">Contact</a>
+            </nav>
+
+            <div class="mt-auto small text-muted w-100 text-center">© 2025
+                Garantia Capital</div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="main-container">
+
+                <!-- Minimal page header — uses same vertical rhythm as .section -->
+                <header class="section  section--card">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h1 class="fw-bold"
+                                    style="letter-spacing: -0.02em; margin-bottom: 0.5rem;">Our
+                                    Team</h1>
+                                <p class="lead text-muted"
+                                    style="margin-bottom: 0;">Leaders
+                                    with deep market experience and a
+                                    disciplined approach to long-term value.</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Single team profile card -->
+                <section class="section section--card"
+                    aria-labelledby="luiz-heading">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <!-- Photo -->
+                            <div class="col-lg-4 col-md-5">
+                                <div class="team-photo rounded"
+                                    style="min-height: 260px;">
+                                    <!-- Replace with real photo: img/luiz-cezar.png -->
+                                    <img src="img/luiz-cezar.png"
+                                        alt="Luiz Cezar Fernandes"
+                                        class="img-fluid rounded"
+                                        style="width:100%; height:100%; object-fit:cover;">
+                                </div>
+                            </div>
+
+                            <!-- Bio -->
+                            <div class="col-lg-8 col-md-7">
+                                <h2 id="luiz-heading" class="mb-1">Luiz Cezar
+                                    Fernandes</h2>
+                                <p class="text-muted mb-3">Founder</p>
+
+                                <div class="team-bio">
+                                    <p class="mb-2">Luiz Cezar Fernandes is an
                                         undeniable name in the Brazilian
                                         financial market. Founder of Banco
                                         Garantia in 1971 and Banco Pactual in
                                         1983, he revolutionized the sector with
-                                        a culture of meritocracy and
-                                        innovation... (continued)</p>
+                                        a culture of meritocracy and innovation,
+                                        establishing Pactual as the largest
+                                        investment bank in Latin America.
+
+                                    </p>
+
+                                    <p class="mb-2">Furthermore, he played a key
+                                        role in
+                                        creating essential market structures
+                                        such as CDI, SELIC, and CETIP, which
+                                        today support the Brazilian financial
+                                        system. Fernandes also founded Brazil's
+                                        first asset management company at Banco
+                                        Pactual, a market that now comprises
+                                        over 800 firms. He led major
+                                        restructuring and privatization
+                                        operations, including Tupy, Lacta,
+                                        Horita, Varig, and Portugal Telecom, as
+                                        well as pioneering the entry of foreign
+                                        investors into the country. He was also
+                                        at the forefront of significant
+                                        negotiations, acting as a consultant in
+                                        Brazil’s external debt negotiation and
+                                        various mergers and acquisitions that
+                                        shaped the national market.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <!-- Placeholder team members -->
-                    <div class="col-md-6">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="card text-center p-3">
-                                    <img src="img/person-placeholder.jpg"
-                                        class="img-fluid rounded mb-2"
-                                        alt="member">
-                                    <h6 class="mb-0">Ana Costa</h6>
-                                    <small class="text-muted">Head of
-                                        Advisory</small>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card text-center p-3">
-                                    <img src="img/person-placeholder.jpg"
-                                        class="img-fluid rounded mb-2"
-                                        alt="member">
-                                    <h6 class="mb-0">Carlos Pinto</h6>
-                                    <small class="text-muted">Head of
-                                        Restructuring</small>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="card text-center p-3">
-                                    <img src="img/person-placeholder.jpg"
-                                        class="img-fluid rounded mb-2"
-                                        alt="member">
-                                    <h6 class="mb-0">Mariana Silva</h6>
-                                    <small class="text-muted">M&amp;A</small>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card text-center p-3">
-                                    <img src="img/person-placeholder.jpg"
-                                        class="img-fluid rounded mb-2"
-                                        alt="member">
-                                    <h6 class="mb-0">Paulo Ramos</h6>
-                                    <small class="text-muted">Capital
-                                        Markets</small>
-                                </div>
-                            </div>
-
+                <!-- Footer identical to home -->
+                <footer class="site-footer py-4">
+                    <div
+                        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="img/garantia-logo-dark.svg"
+                                alt="Garantia logo"
+                                style="height:36px;">
                         </div>
-                    </div>
 
-                </div>
+                        <nav class="d-flex gap-3">
+                            <a class="small footer-link"
+                                href="index.html#about">About</a>
+                            <a class="small footer-link"
+                                href="team.html">Team</a>
+                            <a class="small footer-link"
+                                href="index.html#contact">Contact</a>
+                        </nav>
+
+                        <div class="small text-muted">© 2025 Garantia Capital.
+                            All rights reserved.</div>
+                    </div>
+                </footer>
+
             </div>
         </main>
-
-        <footer class="text-center py-4 bg-white">
-            <div class="container">
-                <small>© 2025 Garantia Capital. All rights reserved.</small>
-            </div>
-        </footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
