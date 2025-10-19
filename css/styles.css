@@ -87,7 +87,11 @@ button:focus {
 .mobile-nav {
   display: flex;
   align-items: center;
-  background: var(--navy);
+  background: linear-gradient(
+    135deg,
+    #0b2540 0%,
+    #1b3b6f 100%
+  );
   color: #fff;
   padding: 0.6rem 0.75rem;
   box-shadow: 0 1px 6px rgba(11, 37, 64, 0.06);
@@ -154,7 +158,7 @@ button:focus {
 }
 .hero .lead {
   color: rgba(255, 255, 255, 0.9);
-  max-width: 60ch;
+  max-width: 100ch;
 }
 
 /* ===== HERO NAV (menu flutuante no canto superior direito em desktop) ===== */
