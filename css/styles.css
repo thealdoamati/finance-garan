@@ -1,206 +1,265 @@
+/* ===== IMPORT DE FONTES ===== */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap");
+
 :root {
-  --navy: #0b2540; /* dark navy */
-  --accent: #0f4a85; /* deep blue accent (mobile navbar) */
-  --muted: #6c6f76;
-  --text: #222;
+  --navy: #0b2a45;
+  --accent: #2b79b1;
+  --accent-hover: #3b8ec2;
+  --muted: #6b7177;
+  --text: #40464a;
+  --bg: #ffffff;
   --max-read-width: 68ch;
 }
 
-/* Reset / layout */
-html {
-  font-size: 15px;
-} /* base menor (era 16px implicit) */
-body {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-    sans-serif;
-  color: var(--text);
-  background: #fff;
-  margin: 0;
-  padding: 0;
-  line-height: 1.45;
-  -webkit-font-smoothing: antialiased;
+/* ===== RESET / BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Smaller headings for less "loud" text */
+html {
+  font-size: 15px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", Inter, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tipografia */
 h1 {
   font-size: 2rem;
   line-height: 1.05;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #14262f;
 }
 h2 {
   font-size: 1.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin: 0.5rem 0 0.75rem 0;
+  font-weight: 600;
+  color: #14262f;
 }
 h3 {
   font-size: 1.05rem;
-}
-h4 {
-  font-size: 0.98rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #14262f;
 }
 .lead {
   font-size: 0.98rem;
+  color: var(--muted);
 }
 
-/* Sidebar for desktop */
-.sidebar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  width: 220px;
-  background: var(--navy);
-  color: #fff;
-  padding: 2rem 1rem;
-  z-index: 1030;
-}
-.sidebar .sidebar-brand img {
-  filter: none;
-}
-.sidebar .nav-link {
-  color: rgba(255, 255, 255, 0.9);
-  padding: 0.6rem 0;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-.sidebar .nav-link:hover {
+/* Links */
+a {
   color: var(--accent);
   text-decoration: none;
 }
-.sidebar .btn-cta {
-  width: 100%;
-  background: #fff;
-  color: var(--navy);
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-  font-weight: 600;
+a:hover,
+a:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  outline: none;
 }
 
-/* Push main content left when sidebar visible */
-@media (min-width: 992px) {
-  .main-content {
-    margin-right: 220px;
-  }
+/* foco acessível */
+a:focus,
+button:focus {
+  outline: 3px solid rgba(43, 121, 177, 0.18);
+  outline-offset: 2px;
 }
 
-/* ---------- Ajuste principal: padding nas seções, não no container ---------- */
+/* ===== LAYOUT PRINCIPAL ===== */
+.main-content {
+  margin-right: 0;
+} /* mantém compatibilidade com seu HTML */
 
-/* Remove padding global */
-.main-container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Aplica padding horizontal nas seções, header e footer */
-.section,
-header.hero,
-footer {
-  padding-inline: 1rem;
-}
-@media (min-width: 768px) {
-  .section,
-  header.hero,
-  footer {
-    padding-inline: 2rem;
-  }
-}
-@media (min-width: 1200px) {
-  .section,
-  header.hero,
-  footer {
-    padding-inline: 3rem;
-  }
-}
-
-/* ---------- Espaçamento vertical consistente e separadores ---------- */
-
-.section {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  margin-bottom: 2rem;
-  border-top: 1px solid rgba(11, 37, 64, 0.06);
-}
-
-/* Evita margens duplicadas em blocos que já parecem cards */
-.section--card,
-.section--card-alt,
-.section--light,
-.stats {
-  margin-bottom: 0;
-}
-
-/* Limita largura legível dos parágrafos para evitar "textão" */
-.section p,
-.hero p,
-.section--card p {
-  max-width: var(--max-read-width);
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  color: #222;
-}
-
-/* Navbar styling (top mobile navbar) */
+/* ===== NAV MOBILE (top) - visível só em telas pequenas ===== */
 .mobile-nav {
-  background: var(--accent);
-  color: #fff;
+  display: flex;
+  align-items: center;
   background: var(--navy);
+  color: #fff;
   padding: 0.6rem 0.75rem;
+  box-shadow: 0 1px 6px rgba(11, 37, 64, 0.06);
 }
 .mobile-nav .navbar-brand img {
   height: 36px;
   filter: none;
 }
 .mobile-nav .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 .mobile-nav .navbar-toggler-icon {
   filter: invert(1) brightness(2);
 }
 
-/* mobile collapsed menu items padding and colors */
-#mobileNav .navbar-nav {
-  background: transparent;
-}
+/* mobile collapsed menu items (quando o collapse abre) */
 #mobileNav .nav-link {
   color: #fff !important;
-  font-weight: 500;
-}
-#mobileNav .btn-cta {
-  background: #fff;
-  color: var(--accent);
-  border: none;
-  padding: 0.45rem 0.75rem;
-  border-radius: 0.5rem;
   font-weight: 600;
+  padding: 0.5rem 0;
 }
 
-/* Ensure collapsed menu has spacing from edges */
-.collapse.navbar-collapse#mobileNav .navbar-nav {
-  padding: 0.5rem 0.5rem 0.75rem;
-}
-
-/* Hero */
+/* ===== HERO ===== */
 .hero {
-  height: 620px; /* reduzido */
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
   background-image: url("../img/hero-img.png");
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
+  color: #fff;
+  overflow: hidden;
 }
+
+/* overlay para melhorar legibilidade do texto sobre a imagem */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 37, 64, 0.3) 0%,
+    rgba(11, 37, 64, 0.15) 60%,
+    rgba(11, 37, 64, 0.1) 100%
+  );
+  z-index: 0;
+}
+
+/* container interno posicionado sobre o overlay */
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
 .hero h1,
 .hero p {
   color: #fff;
 }
-.text-navy {
-  color: var(--navy);
+.hero .display-6 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.hero .lead {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 60ch;
 }
 
+/* ===== HERO NAV (menu flutuante no canto superior direito em desktop) ===== */
+.hero-nav {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: none; /* exibido via media queries (d-lg-flex no HTML) */
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-end;
+  z-index: 3;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.hero-nav .hero-link {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.hero-nav .hero-link:hover {
+  color: #b8d8f5;
+}
+
+/* alinhamento preciso com a largura do .container (ajustado para os breakpoints do Bootstrap) */
+@media (max-width: 991px) {
+  .hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    height: 520px;
+    background-position: center 30%;
+  }
+
+  /* escurece o overlay em telas pequenas */
+  .hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(11, 37, 64, 0.6) 0%,
+      /* mais escuro no topo */ rgba(11, 37, 64, 0.45) 60%,
+      rgba(11, 37, 64, 0.3) 100%
+    );
+  }
+
+  .hero .display-6 {
+    font-size: 1.6rem;
+  }
+
+  .hero-nav {
+    display: none !important;
+  }
+
+  .hero > .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-nav {
+    right: calc(50% - 570px + 1.5rem);
+  } /* xl container ~1140px */
+}
+@media (min-width: 1400px) {
+  .hero-nav {
+    right: calc(50% - 660px + 1.5rem);
+  } /* xxl container ~1320px */
+}
+
+/* ajustes de hero para telas pequenas */
+@media (max-width: 991px) {
+  .hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    height: 520px; /* versão móvel mais curta */
+    background-position: center 30%;
+  }
+  .hero .display-6 {
+    font-size: 1.6rem;
+  }
+  .hero-nav {
+    display: none !important;
+  }
+  .hero > .container {
+    max-width: 100%;
+  }
+}
+
+/* ===== ABOUT (bloco com imagem à direita) ===== */
 #about {
   position: relative;
   overflow: hidden;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
-
+#about .container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 2rem;
+}
 #about .about-bg {
   position: absolute;
   top: 0;
@@ -210,162 +269,122 @@ footer {
   background: url("../img/about-img.png") center center / cover no-repeat;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.12);
+  z-index: 0;
 }
-
-/* Garante que o conteúdo de texto fique legível sobre fundo claro */
-#about .container {
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-}
-
-/* Responsivo — esconde imagem em telas menores */
 @media (max-width: 991px) {
   #about .about-bg {
     display: none;
   }
+  #about .container {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 0;
+  }
 }
 
-/* Sections: card-like separation */
-.section--card {
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(11, 37, 64, 0.06);
-  padding: 1.5rem;
-}
-.section--card-alt {
-  background: #f8fafc;
-  border-radius: 6px;
-  padding: 1.5rem;
-}
-.section--light {
-  background: transparent;
+/* Conteúdo textual com largura legível controlada */
+.section p,
+.hero p,
+.section--card p {
+  max-width: var(--max-read-width);
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+  color: var(--muted);
 }
 
-/* Stats strip (dark) */
+/* ===== STATS STRIP ===== */
 .stats {
-  background: var(--navy);
+  background: linear-gradient(
+    135deg,
+    #0b2540 0%,
+    #1b3b6f 35%,
+    #2a5298 65%,
+    #4b79a1 100%
+  );
   color: #fff;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-.stats > .container {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+  text-align: center;
 }
 .stats h3 {
   font-weight: 700;
   font-size: 1.25rem;
+  color: #fff;
+  margin: 0;
 }
 
-/* image placeholder (visual marker for you to replace) */
-.image-placeholder {
-  height: 220px;
-  border-radius: 8px;
-  border: 2px dashed rgba(11, 37, 64, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ===== CONTACT ===== */
+.contact {
+  padding: 2.5rem 1rem;
+}
+.contact h2 {
+  color: #14262f;
+}
+.contact p {
   color: var(--muted);
-  font-size: 0.95rem;
-  padding: 1rem;
 }
-
-.contact-email a {
+.contact a {
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
 }
-
-.contact-email a:hover {
+.contact a:hover {
+  color: var(--accent-hover);
   text-decoration: underline;
 }
 
-/* Footer */
+/* ===== TEAM (página de equipe) ===== */
+.team-photo {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(11, 37, 64, 0.06);
+  min-height: 260px; /* garante altura mínima como no seu trecho */
+}
+.team-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.team-bio h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #14262f;
+}
+.team-bio p {
+  color: var(--muted);
+  max-width: 70ch;
+  margin-bottom: 0.75rem;
+}
+
+/* ===== FOOTER ===== */
 .site-footer {
   background: transparent;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding: 1.25rem;
   border-top: 1px solid rgba(11, 37, 64, 0.06);
 }
 .footer-link {
   color: var(--muted);
   text-decoration: none;
+  font-size: 0.95rem;
 }
 .footer-link:hover {
   color: var(--navy);
   text-decoration: underline;
 }
 
-/* small responsive tweaks */
+/* ===== PEQUENOS AJUSTES RESPONSIVOS PARA FOOTER E NAV ===== */
 @media (max-width: 991px) {
-  .sidebar {
-    display: none;
+  .mobile-nav {
+    display: flex;
   }
-  .main-content {
-    margin-right: 0;
-  }
-
-  /* ensure footer stacks nicely */
   .site-footer .container {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.6rem;
   }
-}
-
-/* Accessibility: focus states for keyboard users */
-a:focus,
-button:focus,
-.btn:focus {
-  outline: 3px solid rgba(15, 74, 133, 0.18);
-  outline-offset: 2px;
-}
-
-/* Optional: tweak form controls slightly smaller */
-.form-control {
-  font-size: 0.95rem;
-  padding: 0.5rem 0.6rem;
-}
-label.form-label {
-  font-size: 0.95rem;
-}
-
-/* CTA button global */
-.btn-cta {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: #fff;
-  border-radius: 8px;
-  padding: 0.45rem 0.75rem;
-  font-weight: 600;
-}
-
-/* Team page tweaks */
-.team-photo {
-  height: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(11, 37, 64, 0.06);
-}
-
-/* Garantir que a imagem do membro ocupe o bloco com bom corte */
-.team-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Bio e títulos */
-.team-bio h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
-}
-
-.team-bio p {
-  color: #222;
-  max-width: 70ch;
 }

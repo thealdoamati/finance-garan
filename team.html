@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Garantia Capital — Team</title>
+        <title>Garantia Capital — Our Team</title>
 
         <!-- Bootstrap -->
         <link
@@ -13,7 +13,6 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/styles.css">
     </head>
-
     <body>
 
         <!-- TOP NAV (mobile). Hidden on lg+ -->
@@ -36,9 +35,9 @@
                 <div class="collapse navbar-collapse" id="mobileNav">
                     <ul class="navbar-nav ms-auto w-100 py-2">
                         <li class="nav-item"><a class="nav-link"
-                                href="index.html#">About</a></li>
-                        <li class="nav-item"><a class="nav-link active"
-                                href="team.html">Our Team</a></li>
+                                href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="team.html#team">Our Team</a></li>
                         <li class="nav-item"><a class="nav-link"
                                 href="index.html#contact">Contact</a></li>
                     </ul>
@@ -46,56 +45,61 @@
             </div>
         </nav>
 
-        <!-- RIGHT SIDEBAR NAV (desktop) -->
-        <aside class="sidebar d-none d-lg-flex flex-column align-items-start">
-            <div class="sidebar-brand mb-4 w-100 d-flex justify-content-center">
-                <a href="index.html">
-                    <img src="img/garantia-logo.svg" alt="Garantia logo"
-                        style="height:42px;">
-                </a>
-            </div>
-
-            <nav class="nav flex-column w-100">
-                <a class="nav-link" href="index.html#about">About</a>
-                <a class="nav-link active" href="team.html">Team</a>
-                <a class="nav-link" href="index.html#contact">Contact</a>
-            </nav>
-
-            <div class="mt-auto small text-muted w-100 text-center">© 2025
-                Garantia Capital</div>
-        </aside>
-
         <!-- MAIN CONTENT -->
         <main class="main-content">
             <div class="main-container">
 
-                <!-- Minimal page header — uses same vertical rhythm as .section -->
-                <header class="section  section--card">
-                    <div class="container">
+                <!-- HERO (mesmo conteúdo e estrutura da home) -->
+                <header class="hero">
+                    <!-- NAV: aparece apenas em lg+ -->
+                    <nav class="hero-nav d-none d-lg-flex"
+                        aria-label="Hero menu">
+                        <a href="index.html#about" class="hero-link">About</a>
+                        <a href="team.html#team" class="hero-link">Our Team</a>
+                        <a href="index.html#contact"
+                            class="hero-link">Contact</a>
+                    </nav>
+
+                    <div class="container text-center text-lg-start">
                         <div class="row">
                             <div class="col-lg-8">
-                                <h1 class="fw-bold"
-                                    style="letter-spacing: -0.02em; margin-bottom: 0.5rem;">Our
-                                    Team</h1>
-                                <p class="lead text-muted"
-                                    style="margin-bottom: 0;">Leaders
-                                    with deep market experience and a
-                                    disciplined approach to long-term value.</p>
+                                <a class="navbar-brand d-inline-block mb-3"
+                                    href="index.html"
+                                    aria-label="Garantia Capital">
+                                    <img src="img/garantia-logo.svg"
+                                        alt="Garantia logo"
+                                        style="height:42px;">
+                                </a>
+
+                                <h1 class="display-6 fw-semibold mb-3">
+                                    Excellence in Capital Solutions
+                                </h1>
+
+                                <p class="lead mb-4">
+                                    Transforming challenges into opportunities
+                                    with integrity, innovation and expertise.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                <!-- Single team profile card -->
-                <section class="section section--card"
-                    aria-labelledby="luiz-heading">
+                <!-- TEAM: seção com membro (Luiz Cezar Fernandes) -->
+                <section id="team" class="section py-5">
                     <div class="container">
+                        <div class="row mb-4">
+                            <div class="col-lg-8">
+                                <h1>Our Team</h1>
+                            </div>
+                        </div>
+
+                        <!-- Card do membro -->
                         <div class="row g-4 align-items-center">
-                            <!-- Photo -->
+                            <!-- Foto -->
                             <div class="col-lg-4 col-md-5">
                                 <div class="team-photo rounded"
-                                    style="min-height: 260px;">
-                                    <!-- Replace with real photo: img/luiz-cezar.png -->
+                                    style="min-height:260px;">
+                                    <!-- Substitua pela foto real em img/luiz-cezar.png -->
                                     <img src="img/luiz-cezar.png"
                                         alt="Luiz Cezar Fernandes"
                                         class="img-fluid rounded"
@@ -110,19 +114,19 @@
                                 <p class="text-muted mb-3">Founder</p>
 
                                 <div class="team-bio">
-                                    <p class="mb-2">Luiz Cezar Fernandes is an
-                                        undeniable name in the Brazilian
-                                        financial market. Founder of Banco
-                                        Garantia in 1971 and Banco Pactual in
-                                        1983, he revolutionized the sector with
-                                        a culture of meritocracy and innovation,
-                                        establishing Pactual as the largest
-                                        investment bank in Latin America.
-
+                                    <p class="mb-2">
+                                        Luiz Cezar Fernandes is an undeniable
+                                        name in the Brazilian financial market.
+                                        Founder of Banco Garantia in 1971 and
+                                        Banco Pactual in 1983, he revolutionized
+                                        the sector with a culture of meritocracy
+                                        and innovation, establishing Pactual as
+                                        the largest investment bank in Latin
+                                        America.
                                     </p>
 
-                                    <p class="mb-2">Furthermore, he played a key
-                                        role in
+                                    <p class="mb-2">
+                                        Furthermore, he played a key role in
                                         creating essential market structures
                                         such as CDI, SELIC, and CETIP, which
                                         today support the Brazilian financial
@@ -139,28 +143,71 @@
                                         negotiations, acting as a consultant in
                                         Brazil’s external debt negotiation and
                                         various mergers and acquisitions that
-                                        shaped the national market.</p>
+                                        shaped the national market.
+                                    </p>
                                 </div>
+                            </div>
+                        </div>
+                        <!-- /card do membro -->
+
+                    </div>
+                </section>
+
+                <!-- STATS (mantive o strip, pode remover se preferir) -->
+                <section class="stats text-center py-4">
+                    <div class="container">
+                        <div class="row gy-3">
+                            <div class="col-md-4">
+                                <h3 class="mb-0">65+</h3>
+                                <small>Years in global markets</small>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 class="mb-0">$15B+</h3>
+                                <small>Deals originated</small>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 class="mb-0">Latin America</h3>
+                                <small>Primary focus</small>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Footer identical to home -->
+                <!-- CONTACT -->
+                <section id="contact" class="contact py-5 section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2>Contact Us</h2>
+                                <p>We’d love to hear from you. For inquiries
+                                    about partnerships, investment
+                                    opportunities, or our services, reach out to
+                                    our team.</p>
+                                <p class="mb-0">
+                                    <strong>Email:</strong>
+                                    <a
+                                        href="mailto:contact@garantiacapital.com">contact@garantiacapital.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
                 <footer class="site-footer py-4">
                     <div
                         class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
                         <div class="d-flex align-items-center gap-3">
                             <img src="img/garantia-logo-dark.svg"
-                                alt="Garantia logo"
-                                style="height:36px;">
+                                alt="Garantia logo" style="height:36px;">
                         </div>
 
                         <nav class="d-flex gap-3">
                             <a class="small footer-link"
                                 href="index.html#about">About</a>
                             <a class="small footer-link"
-                                href="team.html">Team</a>
+                                href="team.html#team">Our
+                                Team</a>
                             <a class="small footer-link"
                                 href="index.html#contact">Contact</a>
                         </nav>
@@ -173,6 +220,7 @@
             </div>
         </main>
 
+        <!-- Bootstrap bundle (includes JS) -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>

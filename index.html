@@ -37,7 +37,7 @@
                         <li class="nav-item"><a class="nav-link"
                                 href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link"
-                                href="team.html">Our Team</a></li>
+                                href="team.html#team">Our Team</a></li>
                         <li class="nav-item"><a class="nav-link"
                                 href="#contact">Contact</a></li>
                     </ul>
@@ -45,48 +45,35 @@
             </div>
         </nav>
 
-        <!-- RIGHT SIDEBAR NAV (desktop) -->
-        <aside class="sidebar d-none d-lg-flex flex-column align-items-start">
-            <div class="sidebar-brand mb-4 w-100 d-flex justify-content-center">
-                <a href="index.html">
-                    <img src="img/garantia-logo.svg" alt="Garantia logo"
-                        style="height:42px;">
-                </a>
-            </div>
-
-            <nav class="nav flex-column w-100">
-                <a class="nav-link" href="#about">About</a>
-                <a class="nav-link" href="team.html">Our Team</a>
-                <a class="nav-link" href="#contact">Contact</a>
-            </nav>
-
-            <div class="mt-auto small text-muted w-100 text-center">© 2025
-                Garantia Capital</div>
-        </aside>
-
         <!-- MAIN CONTENT (pushes left on desktop because of sidebar) -->
         <main class="main-content">
             <div class="main-container">
 
                 <!-- HERO -->
-                <header
-                    class="hero d-flex align-items-center">
-                    <div class="container">
+                <header class="hero">
+                    <!-- NAV: sibling do container -->
+                    <nav class="hero-nav d-none d-lg-flex"
+                        aria-label="Hero menu">
+                        <a href="#about" class="hero-link">About</a>
+                        <a href="team.html#team" class="hero-link">Our Team</a>
+                        <a href="#contact" class="hero-link">Contact</a>
+                    </nav>
+
+                    <div class="container text-center text-lg-start">
                         <div class="row">
                             <div class="col-lg-8">
-                                <div class="d-flex align-items-center mb-4">
-                                    <img src="img/garantia-logo.svg"
-                                        alt="Garantia logo"
-                                        style="height:42px;">
-                                </div>
-                                <h1 class="display-6 fw-bold">Leading the future
-                                    of the capital markets</h1>
-                                <p class="lead">Sophisticated capital structures
-                                    for shareholders · Excellence in financial
-                                    advice · Restructuring of stressed
-                                    companies</p>
-                                <p class="fs-6 fw-bold text-navy">We challenge
-                                    the market so you can win.</p>
+                                <img src="img/garantia-logo.svg"
+                                    alt="Garantia logo" style="height:42px;"
+                                    class="mb-4">
+
+                                <h1 class="display-6 fw-semibold mb-3">
+                                    Excellence in Capital Solutions
+                                </h1>
+
+                                <p class="lead mb-4">
+                                    Transforming challenges into opportunities
+                                    with integrity, innovation and expertise.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -112,15 +99,6 @@
                                     the safe harbor for those who seek more than
                                     a transaction — they seek a relationship of
                                     trust.</p>
-
-                                <ul class="list-unstyled mt-4">
-                                    <li><strong>65 years</strong> of experience
-                                        in the global financial markets</li>
-                                    <li><strong>Over $15 billion</strong> in
-                                        deals originated</li>
-                                    <li><strong>Focused</strong> on Latin
-                                        America</li>
-                                </ul>
 
                                 <h2 class="mt-4">Investment Banking as
                                     craftsmanship</h2>
@@ -198,7 +176,7 @@
 
                         <nav class="d-flex gap-3">
                             <a class="small footer-link" href="#about">About</a>
-                            <a class="small footer-link" href="team.html">Our
+                            <a class="small footer-link" href="team.html#team">Our
                                 Team</a>
                             <a class="small footer-link"
                                 href="#contact">Contact</a>
